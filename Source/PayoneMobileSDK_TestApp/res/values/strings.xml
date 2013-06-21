@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="keyAppName">PayoneMobileSDK_TestApp</string>
+    <string name="keyWindowTitleSplash">PayoneMobileSDK TestApp</string>
+    <string name="keyWindowTitlePassword">App Passwort</string>
+    <string name="keyWindowTitlePaymentOptions">Zahlungsart</string>
+    <string name="keyWindowTitleUserData">Nutzerdaten</string>
+    <string name="keyWindowTitlePaymentDetails">Zahlungsdetails</string>
+    <string name="keyWindowTitlePaymentRequest">Zahlung</string>
+    <string name="keyWindowTitleMessage">Nachricht</string>
+    <string name="keyWindowTitleSettings">Einstellungen</string>
+    
+    <string name="keyButtonCreditcardCheck">Creditcard Check</string>
+    <string name="keyButtonPreAuthorization">PreAuthorization</string>
+    <string name="keyButtonAuthorization">Authorization</string>
+    <string name="keyButtonPaymentDetails">Zahlungsdetails</string>
+    <string name="keyButtonRequestDetails">Anfrageparameter zeigen</string>
+    <string name="keyButtonOk">OK</string>
+    <string name="keyButtonContinue">Weiter</string>
+    <string name="keyButtonBack">Zurück zum Start</string>
+    
+    <string name="keyTextViewPaymentCreditCard">Kreditkarte</string>
+    <string name="keyTextViewPaymentDebit">Lastschrift</string>
+    
+    <string name="keyResultTitle">Rückgabe:</string>
+    <string name="keyResultStatusSuccess">erfolgreich</string>
+    <string name="keyResultStatusInvalid">ungültige Daten</string>
+    <string name="keyResultStatusError">Fehler</string>
+
+    <string name="keyEditTextPasswordSetPassword">Passwort festlegen</string>
+    <string name="keyEditTextPasswordConfirmPassword">Passwort bestätigen</string>
+    <string name="keyEditTextPasswordEnterPassword">Passwort eingeben</string>
+    
+    <string name="keyPreferenceCategoryApp">Anwendungseinstellungen</string>
+    <string name="keyPreferenceCategoryPayment">Zahlungseinstellungen</string>
+    <string name="keyPreferencePaymentMidTitle">MID</string>
+    <string name="keyPreferencePaymentMidSummary">M-Id festlegen</string>
+    <string name="keyPreferencePaymentPortalIdTitle">Portal-Id</string>
+    <string name="keyPreferencePaymentPortalIdSummary">Portal festlegen</string>
+    <string name="keyPreferencePaymentAccountIdTitle">Account-Id</string>
+    <string name="keyPreferencePaymentAccountIdSummary">Account festlegen</string>
+    <string name="keyPreferencePaymentKeyTitle">Key</string>
+    <string name="keyPreferencePaymentKeySummary">Key eintragen</string>
+    <string name="keyPreferencePasswordTitle">Passwort</string>
+    <string name="keyPreferencePasswordSummary">App-Passwort ändern</string>
+    
+    <string name="keyIntentUserDataExtraPayment">keyIntentUserDataExtraPayment</string>
+    <string name="keyIntentPasswordExtraReset">keyIntentPasswordExtraReset</string>
+    <string name="keyIntentPasswordExtraNextActivity">keyIntentPasswordExtraNextActivity</string>
+    
+    <string name="keyPasswordConfirmError">Die Passwörter stimmen nicht überein!</string>
+    <string name="keyPasswordEnterError">Das Passwort ist nicht korrekt!</string>
+    
+    <string name="keyMenuSettingsTitle">Einstellungen</string>
+    <string name="keyMenuResetTitle">Eingaben zurücksetzen</string>
+    
+    <string name="keyHintPaymentAmount">Betrag</string>
+    <string name="keyHintPaymentFirstName">Vorname</string>
+    <string name="keyHintPaymentLastName">Nachname</string>
+    <string name="keyHintPaymentBankAccount">Kontonummer</string>
+    <string name="keyHintPaymentBankCode">BLZ</string>
+    
+    <string name="keyLabelPaymentAmount">Zahlungsbetrag</string>
+    <string name="keyLabelPaymentName">Ihr Name</string>
+    <string name="keyLabelPaymentBankAccount">Ihre Kontonummer</string>
+    <string name="keyLabelPaymentBankCode">Bankleitzahl</string>
+    
+    <string name="keyHintCreditcardNumber">Kreditkartennummer</string>
+    <string name="keyHintCreditcardVerification">Prüfziffer</string>
+    <string name="keyHintCreditcardExpirationMonth">MM</string>
+    <string name="keyHintCreditcardExpirationYear">YY</string>
+    
+    <string name="keyLabelCreditcardNumber">Kreditkartennummer</string>
+    <string name="keyLabelCreditcardVerification">Prüfziffer</string>
+    <string name="keyLabelCreditcardExpiration">Gültigkeitsdatum (Monat/Jahr, z.B. 04/14)</string>
+    <string name="keyLabelCreditcardExpirationSeparator">/</string>
+    <string name="keyLabelCreditcardType">Art der Karte</string>
+    
+    <string name="keyHintUserDataFirstName">Vorname</string>
+    <string name="keyHintUserDataLastName">Nachname</string>
+    <string name="keyHintUserDataCountry">Land</string>
+    <string name="keyHintUserDataCurrency">Währung</string>
+    
+    <string name="keyLabelUserDataFirstName">Ihr Vorname</string>
+    <string name="keyLabelUserDataLastName">Ihr Nachname</string>
+    <string name="keyLabelUserDataCountry">Ihr Land</string>
+    <string name="keyLabelUserDataCurrency">Währung der Zahlung</string>
+    
+    <string name="keyPaymentInputError">Bitte alle Informationen eintragen!</string>
+    <string name="keyPaymentSettingsError">Bitte alle Felder in den App-Einstellungen ausfüllen!</string>
+    
+    <string name="idPreferencePassword">idPreferencePassword</string>
+    <string name="idPreferencePaymentMid">idPreferencePaymentMid</string>
+    <string name="idPreferencePaymentPortalId">idPreferencePaymentPortalId</string>
+    <string name="idPreferencePaymentAccountId">idPreferencePaymentAccountId</string>
+    <string name="idPreferencePaymentKey">idPreferencePaymentKey</string>
+    
+    <string name="keyMessagePaymentSelection">Bitte erst eine Zahlungsart auswählen.</string>
+    <string name="keyMessageRequestDataMissing">Keine Zahlungsdaten vorhanden.</string>
+    <string name="keyMessageRequestStartCreditCard">Sende Kreditkarten-Anfrage.</string>
+    <string name="keyMessageRequestStartDebitPreAuth">Sende PreAuthorization-Anfrage.</string>
+    <string name="keyMessageRequestStartDebitAuth">Sende Authorization-Anfrage.</string>
+    <string name="keyMessageRequestComplete">Anfrage beendet.</string>
+    
+    <string name="idPreferencesInputId">com.payone.sdkdemoapp.idPreferencesInputId</string>
+    <string name="idPreferencesInputFirstName">idPreferencesInputFirstName</string>
+    <string name="idPreferencesInputLastName">idPreferencesInputLastName</string>
+    <string name="idPreferencesInputAmount">idPreferencesInputAmount</string>
+    <string name="idPreferencesInputBankAccount">idPreferencesInputBankAccount</string>
+    <string name="idPreferencesInputBankCode">idPreferencesInputBankCode</string>
+    <string name="idPreferencesInputCreditcardNumber">idPreferencesInputCreditcardNumber</string>
+    <string name="idPreferencesInputCreditcardVerification">idPreferencesInputCreditcardVerification</string>
+    <string name="idPreferencesInputCreditcardMonth">idPreferencesInputCreditcardMonth</string>
+    <string name="idPreferencesInputCreditcardYear">idPreferencesInputCreditcardYear</string>
+    <string name="idPreferencesInputCreditcardType">idPreferencesInputCreditcardType</string>
+    <string name="idPreferencesInputUserDataFirstName">idPreferencesInputUserDataFirstName</string>
+    <string name="idPreferencesInputUserDataLastName">idPreferencesInputUserDataLastName</string>
+    <string name="idPreferencesInputUserDataCountry">idPreferencesInputUserDataCountry</string>
+    <string name="idPreferencesInputUserDataCurrency">idPreferencesInputUserDataCurrency</string>
+    <string name="idPreferencesInputRequestMode">idPreferencesInputRequestMode</string>
+    
+    <string name="keyLabelRequestMode">Modus der Anfrage</string>
+    <string name="keyRequestModeLive">Live</string>
+    <string name="keyRequestModeTest">Test</string>
+    
+</resources>

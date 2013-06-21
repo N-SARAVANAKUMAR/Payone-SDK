@@ -1,0 +1,131 @@
+Payone Mobile SDK Android Dokumentation:
+
+Der aktuelle Stand beinhaltet die Punkte die im Kostenvoranschlag zwischen Exozet und Payone vereinbart wurden (Kostenvoranschlag: 201205010).
+Inhalt sind die PayoneMobileSDK Bibliothek sowie eine Testapplikation, die die Bibliothek nutzt und ihre Funktionalität aufzeigt.
+
+
+PayoneMobileSDK Bibliothek:
+
+Intention der PayoneMobileSDK Bibliothek ist eine vereinfachte und direkte Ansteuerung der folgenden WebRequests:
+	Creditcardcheck;
+	Preauthorization
+	Authorization
+Hierbei dient, wie vereinbart, die Bibliothek nur als Datendurchreiche und hat keinerlei Fehlerkorrekturen oder Problembehandlungen.
+
+
+Wie binde ich die PayoneMobileSDK Bibliothek in mein Android Projekt ein?
+
+Wie gewohnt kopiert man die "payonemobilesdk.jar" Datei in das gewünschte Projekt; vorzugweise in einen extra Ordner "libs".
+Durch hinzufügen der Bibliothek zum "Java Build Path" kann man nun das PayoneMobileSDK verwenden.
+Zusätzlich sollte darauf geachtet werden, dass die Lib auch für den Export mit aktiviert wird.
+
+
+Wie verwende Ich die PayoneMobileSDK API?
+
+Nachdem das Projekt mit der Bibliothek verbunden ist, kann man durch hinzufügen der entsprechenden imports nun die
+Funktionen und Klassen der API nutzen.
+
+Java Code:
+	import com.payone.lib.builder.ParameterCollection;
+    import com.payone.lib.parameter.PayoneParameters;
+    import com.payone.lib.utils.PayoneRequestFactory;
+    import com.payone.lib.utils.RequestListener;
+
+
+Um über das Ergebnis der Anfrage informiert zu werden, muss das Interface "RequestListener" implementiert werden.
+Hierfür muss die Methode "onRequestResult" der eigenen Klasse hinzugefügt werden. Darin kann dann nach eigenem Bedarf
+auf das Ergebnis der Anfrage reagiert werden.
+
+Java Code:
+    class Xxx implements RequestListener
+    {
+        public void onRequestResult(ParameterCollection result)
+        {
+            // Add Logic and Gui Updates
+        }
+    }
+
+In der statischen Klasse "PayoneRequestFactory" sind nun alle unterstützten Anfragen enhalten:
+
+Java Code:
+	// request a creditcardcheck
+	PayoneRequestFactory.createCreditCardCheckRequest(%RequestListener%, %M5Hash_Key%, %parameters%);
+
+	// request a preauthorization
+	PayoneRequestFactory.createPreAuthorizationRequest(%RequestListener%, %M5Hash_Key%, %parameters%);
+
+	// request an authorization
+	PayoneRequestFactory.createAuthorizationRequest(%RequestListener%, %M5Hash_Key%, %parameters%);
+
+
+Die einzelnen Übergabeparameter der Methode erklären sich wie folgt:
+
+%RequestListener%:
+	Der Methode onRequestResult des RequestListener wird aufgerufen, sobald die Anfrage ein mögliches Resultat (ob valide, invalide oder fehlerhaft) 
+	dem Benutzer zur Verfügung stellen kann.
+	Der Rückgabe wird eine ParameterCollection beigefügt. Diese beinhaltet, ähnlich wie ein Dictionary, alle Key-Value Paare, die
+	der Benutzer nun nutzen kann, um die Anfrage dementsprechend zu analysieren und visualisieren.
+
+%M5Hash_Key%
+	Dieser Schlüssel wird von Payone als Zusatz bei der Hash-Summen-Berechnung angehangen. Durch betreten des Payone Merchant Portals
+	kann Einsicht auf diesen Wert genommen werden und im Anschluss dieser an die Anfrage angehangen werden.
+
+%parameters%
+	Hier werden alle für die Anfrage wichtigen Parameter eingetragen und im Anschluss an die Anfrage übergeben.
+	Je nach Anfrage unterscheiden sich hier die Parameterwerte (dazu bitte die Payone Client Dokumentation einsehen).
+
+
+Java Code (inside class that implements RequestListener):
+
+	private void DoMyRequest()
+	{
+        ParameterCollection parameters = new ParameterCollection();
+        parameters.put(PayoneParameters.AID, "12345");
+        parameters.put(PayoneParameters.MID, "67890");
+        parameters.put(PayoneParameters.PORTALID, "47110815");
+        parameters.put(PayoneParameters.MODE, PayoneParameters.ModeParameter.TEST);
+        parameters.put(PayoneParameters.REQUEST, PayoneParameters.RequestParameter.CREDITCARDCHECK);
+        parameters.put(PayoneParameters.RESPONSETYPE, PayoneParameters.ResponseTypeParameter.JSON);
+        parameters.put(PayoneParameters.CARDPAN, "5500000000000004");
+        parameters.put(PayoneParameters.CARDTYPE, PayoneParameters.CreditCardVariations.MASTERCARD);
+        parameters.put(PayoneParameters.CARDEXPIREDATE, "1401");
+        parameters.put(PayoneParameters.CARDCVC2, "1234");
+        parameters.put(PayoneParameters.ENCODING, PayoneParameters.EncodingParameter.UTF_8);
+        parameters.put(PayoneParameters.STORECARDDATA, PayoneParameters.StoreCardDataParameter.YES);
+        parameters.put(PayoneParameters.LANGUAGE, "de");
+
+        String key = "geheim";
+		
+	    PayoneRequestFactory.createCreditCardCheckRequest(this, key, parameters);
+	}
+
+	public void onRequestResult(ParameterCollection result)
+    {
+		// do something with the request here
+		
+        String output = "";
+
+        for (Entry<String, String> entry : result.getCollection().entrySet())
+        {
+            output += String.format("Key(%s) - Value(%s)\n", entry.getKey(), entry.getValue());
+        }
+            
+        Log.i(TAG, output);
+
+        if(result.equals(PayoneParameters.ResponseErrorCodes.ERROR))
+		{
+			// something went wrong!
+		}
+	}
+	
+
+Durch das verwenden der PayoneParameters-Klasse können mögliche Parameter, sowie Unterelemente schnell und vor allem
+korrekt angesteuert oder ausgewertet werden. Die PayoneParameters-Klasse enthält alle zur Verfügung stehenden Parameter.
+
+
+
+Die PayoneMobileSDK-Test Applikation.
+
+Um einen kleinen Einblick in die Handhabung der API zu bekommen, wird eine TestApplikation zur Verfügung gestellt.
+Diese enthält drei Buttons, mit denen man die drei Anfragen senden und auswerten kann.
+Durch entweder grünen, roten oder gelben Text und Analyse der Textausgabe kann man nun die Anfrage ausprobieren und einsehen.

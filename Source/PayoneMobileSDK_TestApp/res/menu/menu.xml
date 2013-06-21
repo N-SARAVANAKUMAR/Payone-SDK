@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <item android:id="@+id/menuItemSettings"
+          android:icon="@android:drawable/ic_menu_preferences"
+          android:title="@string/keyMenuSettingsTitle"
+          />
+    <item android:id="@+id/menuItemReset"
+          android:icon="@android:drawable/ic_input_delete"
+          android:title="@string/keyMenuResetTitle"
+          />
+
+</menu>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" 
+    
+    android:padding="10dp"
+    >
+
+    <!-- The 3 test buttons -->
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        
+        android:text="@string/keyButtonCreditcardCheck"
+        android:onClick="onCreditCardCheck"
+        />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        
+        android:text="@string/keyButtonPreAuthorization"
+        android:onClick="onPreAuthorization"
+        />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        
+        android:text="@string/keyButtonAuthorization"
+        android:onClick="onAuthorization"
+        />
+
+
+    <!-- The result -->
+    <TextView
+        android:id="@+id/textResultTitle"
+        
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        
+        android:gravity="center_horizontal"
+        
+        android:textStyle="bold"
+        android:textColor="@android:color/primary_text_dark"
+        android:layout_marginTop="5dp"
+        
+        android:text="@string/keyResultTitle" />
+    
+    <TextView
+        android:id="@+id/textResultOutput"
+        
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        
+        android:layout_marginTop="5dp"
+        
+        android:text="" />
+    
+    <ProgressBar 
+        android:id="@+id/progressbar"
+        
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        
+        android:layout_gravity="center_horizontal"
+        
+        android:indeterminate="true" 
+        android:visibility="gone" />
+    
+</LinearLayout>

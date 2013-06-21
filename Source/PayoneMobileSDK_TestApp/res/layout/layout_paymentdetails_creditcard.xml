@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="@dimen/standard_padding"
+    android:orientation="vertical" >
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:text="@string/keyLabelCreditcardNumber" />
+        
+        <EditText
+            android:id="@+id/editTextCreditcardNumber"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/keyHintCreditcardNumber"
+            android:inputType="number"
+            android:imeOptions="actionNext"
+            android:nextFocusDown="@+id/editTextCreditcardExpirationMonth" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:text="@string/keyLabelCreditcardExpiration" />
+        
+        <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            
+	        <EditText
+	            android:id="@+id/editTextCreditcardExpirationMonth"
+	            android:layout_width="55dp"
+	            android:layout_height="wrap_content"
+	            android:hint="@string/keyHintCreditcardExpirationMonth"
+	            android:inputType="number"
+	            android:maxLength="2"
+	            android:imeOptions="actionNext"
+	            android:nextFocusDown="@+id/editTextCreditcardExpirationYear" />
+	        
+	        <TextView
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content" 
+	            android:text="@string/keyLabelCreditcardExpirationSeparator" />
+	        
+	        <EditText
+                android:id="@+id/editTextCreditcardExpirationYear"
+                android:layout_width="55dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/keyHintCreditcardExpirationYear"
+                android:inputType="number"
+                android:maxLength="2"
+                android:imeOptions="actionNext"
+                android:nextFocusDown="@+id/editTextCreditcardVerification" />
+	        
+        </LinearLayout>
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:text="@string/keyLabelCreditcardVerification" />
+        
+        <EditText
+            android:id="@+id/editTextCreditcardVerification"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/keyHintCreditcardVerification"
+            android:inputType="number"
+            android:imeOptions="actionDone" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:text="@string/keyLabelCreditcardType" />
+        
+        <Spinner
+            android:id="@+id/spinnerCreditCardType"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" 
+            />
+        
+    </LinearLayout>
+     
+    <Button 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/keyButtonCreditcardCheck"
+        android:onClick="onCreditcardCheck" />
+
+</LinearLayout>

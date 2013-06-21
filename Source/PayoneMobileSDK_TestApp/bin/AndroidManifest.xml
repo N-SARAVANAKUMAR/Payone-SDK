@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.payone.sdkdemoapp"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:targetSdkVersion="8" android:minSdkVersion="7" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:icon="@drawable/logo"
+        android:label="@string/keyAppName"
+        android:theme="@style/Theme.PayoneDemoApp.BackgroundTheme" >
+        
+        <activity
+            android:name=".gui.SplashActivity"
+            android:label="@string/keyWindowTitleSplash"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- <activity
+            android:name=".PayoneTestActivity"
+            android:label="@string/keyAppName"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> -->
+        <activity
+            android:name=".gui.PasswordActivity"
+            android:label="@string/keyWindowTitlePassword"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+            <intent-filter>
+                <!-- the intent action has to be hardcoded, no "@string/..." possible here -->
+		        <action android:name="com.payone.sdkdemoapp.ChangePassword" />
+		        <category android:name="android.intent.category.DEFAULT" />
+		    </intent-filter>
+        </activity>
+        <activity
+            android:name=".gui.PaymentOptionsActivity"
+            android:label="@string/keyWindowTitlePaymentOptions" >
+        </activity>
+        <activity
+            android:name=".gui.UserDataActivity"
+            android:label="@string/keyWindowTitleUserData" >
+        </activity>
+        <activity
+            android:name=".gui.MessageViewActivity"
+            android:label="@string/keyWindowTitleMessage" >
+        </activity>
+        <activity
+            android:name=".gui.SettingsActivity"
+            android:label="@string/keyWindowTitleSettings" >
+        </activity>
+        <activity
+            android:name=".gui.PaymentDetailsCreditCardActivity"
+            android:label="@string/keyWindowTitlePaymentDetails" >
+        </activity>
+        <activity
+            android:name=".gui.PaymentDetailsDebitActivity"
+            android:label="@string/keyWindowTitlePaymentDetails" >
+        </activity>
+        <activity
+            android:name=".gui.PaymentRequestActivity"
+            android:label="@string/keyWindowTitlePaymentRequest" >
+        </activity>
+    </application>
+
+</manifest>

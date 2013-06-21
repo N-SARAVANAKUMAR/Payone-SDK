@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="@dimen/standard_padding"
+    android:orientation="vertical" >
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+        
+	    <TextView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" 
+	        android:text="@string/keyLabelPaymentBankAccount"/>
+	    
+	    <EditText
+	        android:id="@+id/editTextPaymentBankAccount"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:hint="@string/keyHintPaymentBankAccount"
+	        android:inputType="number"
+	        android:imeOptions="actionNext" />
+	    
+	    <TextView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" 
+	        android:text="@string/keyLabelPaymentBankCode"/>
+	    
+	    <EditText
+	        android:id="@+id/editTextPaymentBankCode"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:hint="@string/keyHintPaymentBankCode"
+	        android:inputType="number"
+	        android:imeOptions="actionNext" />
+	    
+	    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:text="@string/keyLabelPaymentAmount" />
+        
+        <EditText
+            android:id="@+id/editTextPaymentAmount"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/keyHintPaymentAmount"
+            android:inputType="numberDecimal"
+            android:imeOptions="actionDone" />
+	    
+	</LinearLayout>
+    
+    <Button 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/keyButtonPreAuthorization"
+        android:onClick="onPreAuthorization" />
+    <Button 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/keyButtonAuthorization"
+        android:onClick="onAuthorization" />
+
+</LinearLayout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Used in PaymentDetailsCreditCardActivity -->
+    <string-array name="arrayCreditcardTypeLabels">
+        <item>Mastercard</item>
+        <item>Visa</item>
+        <item>Amex</item>
+        <item>Diners</item>
+        <item>JCB</item>
+        <item>Maestro international</item>
+        <item>Maestro UK</item>
+        <item>Discover</item>
+        <item>Carte Bleue</item>
+    </string-array>
+    <string-array name="arrayCreditcardTypeValues">
+        <item>M</item>
+        <item>V</item>
+        <item>A</item>
+        <item>D</item>
+        <item>J</item>
+        <item>O</item>
+        <item>U</item>
+        <item>C</item>
+        <item>B</item>
+    </string-array>
+</resources>

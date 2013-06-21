@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <PreferenceCategory
+            android:title="@string/keyPreferenceCategoryApp" >
+            
+        <Preference
+            android:title="@string/keyPreferencePasswordTitle"
+            android:summary="@string/keyPreferencePasswordSummary" > 
+                
+                <!-- the intent action has to be hardcoded, no "@string/..." possible here -->
+                <intent
+                    android:action="com.payone.sdkdemoapp.ChangePassword">
+                    
+                        <extra
+		                  android:name="@string/keyIntentPasswordExtraReset"
+		                  android:value="true" />
+                    
+                </intent>    
+                
+        </Preference>
+            
+    </PreferenceCategory>
+    
+    <PreferenceCategory
+            android:title="@string/keyPreferenceCategoryPayment" >
+              
+        <EditTextPreference
+                android:key="@string/idPreferencePaymentAccountId"
+                android:title="@string/keyPreferencePaymentAccountIdTitle"
+                android:summary="@string/keyPreferencePaymentAccountIdSummary"
+                android:dialogTitle="@string/keyPreferencePaymentAccountIdTitle"
+                android:inputType="number"
+                android:defaultValue="18628"
+                 />
+        <EditTextPreference
+                android:key="@string/idPreferencePaymentMid"
+                android:title="@string/keyPreferencePaymentMidTitle"
+                android:summary="@string/keyPreferencePaymentMidSummary"
+                android:dialogTitle="@string/keyPreferencePaymentMidTitle"
+                android:inputType="number"
+                android:defaultValue="18613"
+                 />
+        <EditTextPreference
+                android:key="@string/idPreferencePaymentPortalId"
+                android:title="@string/keyPreferencePaymentPortalIdTitle"
+                android:summary="@string/keyPreferencePaymentPortalIdSummary"
+                android:dialogTitle="@string/keyPreferencePaymentPortalIdTitle"
+                android:inputType="number"
+                android:defaultValue="2013349"
+                 />
+        <EditTextPreference
+                android:key="@string/idPreferencePaymentKey"
+                android:title="@string/keyPreferencePaymentKeyTitle"
+                android:summary="@string/keyPreferencePaymentKeySummary"
+                android:dialogTitle="@string/keyPreferencePaymentKeyTitle"
+                android:inputType="number"
+                android:defaultValue="TuyuotaaNgaeboaWaithohD4ohKooz"
+                 />
+             
+    </PreferenceCategory>
+    
+</PreferenceScreen>
